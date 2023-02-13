@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table id="myTable">
+  <tr>
+    <td><div class="chefe-linha">
+  <p class="chefe-nome">
+    Bulbasaur
+  </p>
+  <div class="chefe-tipo">
+<img class="tipo1" src="https://images.weserv.nl/?w=25&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Types/POKEMON_TYPE_GRASS.png" title="planta" />&nbsp;
+    <img class="tipo2" src="https://images.weserv.nl/?w=25&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Types/POKEMON_TYPE_POISON.png" title="venenosso" />
+  </div>
+ </div>
+<div class="chefe-borda">
+   <div class="chefe-imagem">
+    <img Class="chefe" src="https://images.weserv.nl/?w=200&amp;il&amp;url=raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Pokemon%20-%20256x256/pokemon_icon_001_00.png" />
+    <div class="dex">
+      001
+    </div>
+  </div>
+  <div class="chefe-2">
+    <span class="cp_prefixo">
+      PC&nbsp;
+    </span>
+     590 - 637
+  </div>
+  <div class="chefe-3">
+    <span class="chefe-clima">
+      <img class="clima1" src="https://images.weserv.nl/?w=30&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Weather/weatherIcon_large_clearDay.png" title="ensolarado" />&nbsp;
+      <img class="clima2" src="https://images.weserv.nl/?w=30&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Weather/weatherIcon_large_overcastDay.png" title="nublado" />&nbsp;
+    </span>
+    <span class="boost-cp">
+      <span class="cp_prefixo">
+        PC&nbsp;
+      </span>
+      737 -  796
+    </span>
+  </div>
+</div></td>
+  </tr>
+  <tr>
+    <td><div class="chefe-linha">
+  <p class="chefe-nome">
+    Ivysaur
+  </p>
+  <div class="chefe-tipo">
+<img class="tipo1" src="https://images.weserv.nl/?w=25&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Types/POKEMON_TYPE_GRASS.png" title="planta" />&nbsp;
+    <img class="tipo2" src="https://images.weserv.nl/?w=25&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Types/POKEMON_TYPE_POISON.png" title="venenosso" />
+  </div>
+ </div>
+<div class="chefe-borda">
+   <div class="chefe-imagem">
+    <img Class="chefe" src="https://images.weserv.nl/?w=200&amp;il&amp;url=raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Pokemon%20-%20256x256/pokemon_icon_002_00.png" />
+    <div class="dex">
+      002
+    </div>
+  </div>
+  <div class="chefe-2">
+    <span class="cp_prefixo">
+      PC&nbsp;
+    </span>
+     912 - 970
+  </div>
+  <div class="chefe-3">
+    <span class="chefe-clima">
+      <img class="clima1" src="https://images.weserv.nl/?w=30&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Weather/weatherIcon_large_clearDay.png" title="ensolarado" />&nbsp;
+      <img class="clima2" src="https://images.weserv.nl/?w=30&amp;il&amp;url=https://raw.githubusercontent.com/nowadraco/pogo_assets/master/Images/Weather/weatherIcon_large_overcastDay.png" title="nublado" />&nbsp;
+    </span>
+    <span class="boost-cp">
+      <span class="cp_prefixo">
+        PC&nbsp;
+      </span>
+      1141 -  1213
+    </span>
+  </div>
+</div></td>
+  </tr>
+</table>
+
+<script>
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr");
+
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    var cells = row.getElementsByTagName("td");
+    var cellContent = cells[0].innerHTML;
+
+    var file = new Blob([cellContent], { type: "text/html" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(file);
+    a.download = (i + 1) + ".html";
+    a.click();
+  }
+</script>
+
+</body>
+</html>

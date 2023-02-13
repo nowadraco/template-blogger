@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .reides {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 50px 10px 0px;
+    caret-color: rgba(33, 33, 33);
+    color: rgba(33, 33, 33);
+    font-family: Lato, sans-serif;
+  }
+  
+  .header-tier {
+    box-sizing: border-box;
+    list-style-type: none;
+  }
+  
+  .header-tier-1 {
+    box-sizing: border-box;
+    color: black;
+    line-height: 2em;
+    padding: 0px 1rem;
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.08);
+  }
+  
+  .header-tier-3 {
+    box-sizing: border-box;
+    color: black;
+    line-height: 2em;
+    padding: 0px 1rem;
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.08);
+  }
+  
+  .header-tier-5 {
+    box-sizing: border-box;
+    color: black;
+    line-height: 2em;
+    padding: 0px 1rem;
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.08);
+  }
+  
+  .header-tier-MEGA {
+    box-sizing: border-box;
+    color: black;
+    line-height: 2em;
+    padding: 0px 1rem;
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.08);
+  }
+  
+  .header-tier-EX {
+    box-sizing: border-box;
+    color: black;
+    line-height: 2em;
+    padding: 0px 1rem;
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.08);
+  }
+  
+  .caixa-reide {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgba(25, 25, 112, 0.53);
+    padding: 2px 10px 2rem;
+    width: 215px;
+    margin: 5px;
+    vertical-align: top;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  
+  .chefe-linha {
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+  }
+  
+  .chefe-nome {
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 3px auto 1px 10px;
+    font-size: 90%;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.7);
+    margin-block-end: 0em;
+    z-index: 0;
+  }
+  
+  .dex {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+    left: 8.4em;
+    top: 3px;
+  }
+  
+  .chefe-borda {
+    box-sizing: border-box;
+    height: 200px;
+    position: relative;
+  }
+  
+  .chefe-imagem {
+    box-sizing: border-box;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 3px solid rgba(147, 131, 187, 0.34);
+    background-color: rgba(13, 36, 131, 0.14);
+  }
+  
+  .chefe {
+    box-sizing: border-box;
+    border-style: none;
+    height: auto;
+    max-width: 100%;
+    margin-top: -43px;
+    margin-bottom: -8px;
+  }
+  
+  .shiny-icon {
+    box-sizing: border-box;
+    border-style: none;
+    height: 1.5em;
+    max-width: 100%;
+    position: absolute;
+    left: 1em;
+    top: 10px;
+  }
+  
+  .chefe-tipo {
+    box-sizing: border-box;
+    line-height: 1;
+    margin-top: 2px;
+    margin-right: 5px;
+    z-index: 2;
+  }
+  
+  .tipo1 {
+    box-sizing: border-box;
+    border-style: none;
+    height: 1.5em;
+    max-width: 100%;
+    width: auto;
+    line-height: 1;
+  }
+  
+  .tipo2 {
+    box-sizing: border-box;
+    border-style: none;
+    height: 1.5em;
+    max-width: 100%;
+    width: auto;
+    line-height: 1;
+  }
+  
+  .chefe-2-Grande-cp {
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .cp_prefixo {
+    box-sizing: border-box;
+    font-size: 9px;
+  }
+  
+  .chefe-3-Grande-cp-Grande-cp {
+    box-sizing: border-box;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+  }
+  
+  .chefe-clima {
+    box-sizing: border-box;
+    margin-right: auto;
+  }
+  
+  .clima1 {
+    box-sizing: border-box;
+    border-style: none;
+    height: 1.5em;
+    max-width: 100%;
+    width: auto;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  
+  .clima2 {
+    box-sizing: border-box;
+    border-style: none;
+    height: 1.5em;
+    max-width: 100%;
+    margin-left: -3px;
+    width: auto;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  
+  .boost-cp {
+    box-sizing: border-box;
+  }
+  
+  .chefe-2 {
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .chefe-3-Grande-cp {
+    box-sizing: border-box;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6)
+  }
+  
+  .regiao{
+    position: absolute;
+    text-align: center;
+    bottom: 65px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  </style>
+</head>
+
+
+<p>Estes são os atuais Chefe de Reides junto com o Zamazenta e o evento Ultra Desbloqueio parte 3 . As Reides  estarão disponíveis até  1º de setembro, às 10h horário Local </p>
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-ljw18bgBeC4/YNpvwMrbYuI/AAAAAAAC_CA/Z2RH93Cb2Z85GezJxmebm-dyPjawzue3ACLcBGAsYHQ/s1024/20210628_215610.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="512" data-original-width="1024" height="100" src="https://1.bp.blogspot.com/-ljw18bgBeC4/YNpvwMrbYuI/AAAAAAAC_CA/Z2RH93Cb2Z85GezJxmebm-dyPjawzue3ACLcBGAsYHQ/w200-h100/20210628_215610.jpg" width="200" /></a></div><br />
+
+<script>
+
+  function includeHTML() {
+
+  var z, i, elmnt, file, xhttp;
+
+  /*loop through a collection of all HTML elements:*/
+
+  z = document.getElementsByTagName("*");
+
+  for (i = 0; i < z.length; i++) {
+
+    elmnt = z[i];
+
+    /*search for elements with a certain atrribute:*/
+
+    file = elmnt.getAttribute("w3-include-html");
+
+    if (file) {
+
+      /*make an HTTP request using the attribute 
+
+value as the file name:*/
+
+      xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4) {
+
+          if (this.status == 200) {elmnt.innerHTML = 
+
+this.responseText;}
+
+          if (this.status == 404) {elmnt.innerHTML = 
+
+"pokemon não cadastrado";}
+
+          /*remove the attribute, and call this 
+
+function once more:*/
+
+          elmnt.removeAttribute("w3-include-html");
+
+          includeHTML();
+
+        }
+
+      }      
+
+      xhttp.open("GET", file, true);
+
+      xhttp.send();
+
+      /*exit the function:*/
+
+      return;
+
+    }
+
+  }
+
+};
+
+</script>
+
+<body>
+
+  <ul class="reides">
+
+    <li class="header-tier">
+
+      <h2 class="header-tier-1">
+
+        NÍVEL 1
+
+      </h2>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/113.html">
+
+      </div>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/403.html">
+
+      </div>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/676_n.html">
+
+      </div>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/677.html">
+
+      </div>
+
+    </li>
+
+
+    <li class="header-tier">
+
+      <h2 class="header-tier-3">
+
+        NÍVEL 3</h2>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/031.html">
+
+      </div>
+
+    </li>
+
+
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/034.html">
+
+      </div>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/108.html">
+
+      </div>
+
+    </li>
+    
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/241.html">
+
+      </div>
+
+    </li>
+    
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/475.html">
+
+      </div>
+
+    </li>
+
+    <li class="header-tier">
+
+      <h2 class="header-tier-MEGA">
+
+        MEGA REIDE</h2>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/282_m.html">
+
+      </div>
+
+    </li>
+
+    <li class="header-tier">
+
+      <h2 class="header-tier-5">
+
+        NÍVEL 5</h2>
+
+    </li>
+
+    <li class="caixa-reide">
+
+      <div w3-include-html="https://raw.githubusercontent.com/nowadraco/reide/main/786.html">
+
+      </div>
+
+    </li>
+
+    <li class="header-tier">
+
+      <h2 class="header-tier-EX">
+
+        EX</h2>
+
+    </li>
+
+    <p> sem reides no momento </p>
+
+  </ul>
+
+</body>
+
+<script>
+
+includeHTML();
+
+</script>
+</html>
